@@ -7,7 +7,7 @@
     (else (crear_matriz n posicion))))
 
 
-(define contador 1) ; Variable global para almacenar el contador
+(define contador 1) ; Variable global para almacenar el contador de los movimientos del caballo
 
 (define (incrementar-contador)
   (set! contador (+ contador 1)))
@@ -17,7 +17,7 @@
   (displayln contador))
 
 
-;; Aqui se crea la matriz y se envia a llenar
+;; En esta funcion se crea la matriz y se envia a llenar
 (define (crear_matriz n posicion)
   (define (crear-matriz-columnas i j)
     (cond
@@ -69,7 +69,7 @@
 (define matriz (solucion 6 '(1 0)))
 
 
-;;Codigo con la funcion para movimientos del caballo
+;;Codigo con la funcion para movimientos del caballo 
 (define (posiciones_caballo tamano ficha)
   (define fila (car ficha))
   (define columna (cadr ficha))
@@ -99,7 +99,7 @@
 
 
 
-;;Funciones que estoy trabajando
+;;Funciones para restar los numeros de los movimientos totales en un espacio determinado
 (define (restar-indices lista1 lista2)
   (restar-indices-aux lista1 lista2))
 
@@ -131,6 +131,7 @@
         (set! lista1 (list-set lista1 i nueva-fila)))
     lista1)))
 
+;funcion para imprimir matriz modificada(pruebas)
 (define (imprimir-matriz matriz)
   (displayln "Matriz modificada:")
   (displayln matriz))
@@ -138,7 +139,7 @@
 (define (realizar-movs matriz-modificada lista2)
   (displayln (car lista2)))
 
-
+;funcion inicial que llama a la funcion matriz1 matriz2 y restar indices(esta funcion se deberia ejecutar recursivamente hasta que el caballo realice todos los movimientos en el tablero)
 (define (PDC-Sol n lista)
   (define matriz1 (solucion n lista))
   (define matriz2 (posiciones_caballo n lista))
